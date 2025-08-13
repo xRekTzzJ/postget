@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 class ApiAccessService {
   final String _host = const String.fromEnvironment(
     'HOST',
-    defaultValue: "http://10.0.2.2:5110",
+    defaultValue: "http://10.0.2.2:5227",
   );
 
   final Dio _dio;

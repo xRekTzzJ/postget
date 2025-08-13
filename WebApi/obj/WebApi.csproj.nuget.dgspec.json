@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xRekTzzJ\\Documents\\postget\\backend\\backend.csproj": {}
+    "C:\\Users\\xRekTzzJ\\Documents\\postget\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xRekTzzJ\\Documents\\postget\\backend\\backend.csproj": {
+    "C:\\Users\\xRekTzzJ\\Documents\\postget\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xRekTzzJ\\Documents\\postget\\backend\\backend.csproj",
-        "projectName": "backend",
-        "projectPath": "C:\\Users\\xRekTzzJ\\Documents\\postget\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\xRekTzzJ\\Documents\\postget\\WebApi\\WebApi.csproj",
+        "projectName": "WebApi",
+        "projectPath": "C:\\Users\\xRekTzzJ\\Documents\\postget\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\xRekTzzJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xRekTzzJ\\Documents\\postget\\backend\\obj\\",
+        "outputPath": "C:\\Users\\xRekTzzJ\\Documents\\postget\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
