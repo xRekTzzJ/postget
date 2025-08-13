@@ -11,30 +11,17 @@ class ApiAccessService {
   final Dio _dio;
 
   ApiAccessService() : _dio = Dio() {
+    _configureDio();
+  }
+
+  ApiAccessService.test(this._dio);
+
+  void _configureDio() {
     _dio.options
       ..baseUrl = _host
       ..connectTimeout = const Duration(seconds: 5)
       ..receiveTimeout = const Duration(seconds: 5)
       ..headers = {'Content-Type': 'application/json'};
-
-    _dio.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (options, handler) {
-          // final token = getIt<SecureStorageService>().getToken();
-          // if (token != null) {
-          //   options.headers['Authorization'] = 'Bearer $token';
-          // }
-          return handler.next(options);
-        },
-        onResponse: (response, handler) {
-          return handler.next(response);
-        },
-        onError: (DioException e, handler) {
-          print("API Error: ${e.message}");
-          return handler.next(e);
-        },
-      ),
-    );
   }
 
   Future<Response> get({
@@ -48,10 +35,7 @@ class ApiAccessService {
     }
   }
 
-  Future<Response> post({
-    required String url,
-    Map<String, dynamic>? body,
-  }) async {
+  Future<Response> post({required String url, Object? body}) async {
     try {
       return await _dio.post(url, data: body);
     } on DioException catch (e) {
