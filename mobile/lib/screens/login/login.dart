@@ -6,12 +6,12 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-    final _passwordController = TextEditingController();
-    final _loginController = TextEditingController();
+    final formKey = GlobalKey<FormState>();
+    final passwordController = TextEditingController();
+    final loginController = TextEditingController();
 
-    final _loginFocus = FocusNode();
-    final _passwordFocus = FocusNode();
+    final loginFocus = FocusNode();
+    final passwordFocus = FocusNode();
 
     return Center(
       child: Column(
@@ -33,14 +33,14 @@ class Login extends StatelessWidget {
             ],
           ),
           Form(
-            key: _formKey,
+            key: formKey,
             child: Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [
                   TextFormField(
-                    controller: _loginController,
-                    focusNode: _loginFocus,
+                    controller: loginController,
+                    focusNode: loginFocus,
                     decoration: InputDecoration(labelText: 'Логин'),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -49,15 +49,15 @@ class Login extends StatelessWidget {
                       return null;
                     },
                     onFieldSubmitted: (_) {
-                      FocusScope.of(context).requestFocus(_passwordFocus);
+                      FocusScope.of(context).requestFocus(passwordFocus);
                     },
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 20),
                     child: TextFormField(
                       obscureText: true,
-                      controller: _passwordController,
-                      focusNode: _passwordFocus,
+                      controller: passwordController,
+                      focusNode: passwordFocus,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Введите пароль";
@@ -74,7 +74,7 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       child: OutlinedButton(
                         onPressed: () => {
-                          if (_formKey.currentState!.validate())
+                          if (formKey.currentState!.validate())
                             {print('Form is valid')},
                         },
                         child: Text("Войти"),
